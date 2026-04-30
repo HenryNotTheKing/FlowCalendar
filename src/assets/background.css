@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, "Segoe UI", sans-serif;
+}
+body {
+ overflow: hidden; 
+}
+
+.navbar {
+  height: 30px;
+  display: flex;
+  background-color: #f7f7f7; /* 背景色 */;
+  align-items: center;
+  padding: 0px;
+}
+
+.right-bar{
+  width: 260px;
+  height: inherit;
+  background-color: white; 
+}
+.left-bar {
+  height: inherit;
+  width: 260px;
+  background-color: #ffffff; 
+}
+.center-bar {
+  flex: 1; 
+  background-color: white; 
+}
+
+.container {
+  display: flex; 
+  height: 100vh; 
+  width: 100vw; 
+}
+
+
+
+.right-panel{
+  width: 260px;
+  background-color: white; 
+  flex-shrink: 0;
+  display: flex; 
+  justify-content: center;
+}
+.left-panel {
+  width: 260px;
+  background-color: #f7f7f7; 
+  flex-shrink: 0;
+  display: flex; 
+  justify-content: center;
+}
+
+.center-panel {
+  height: inherit;
+  flex: 1;
+  background-color: white;
+}
+
+.sub-container {
+  display: flex;
+  box-sizing: border-box;
+  position: absolute;
+  width: 100vw; 
+  height: calc(100vh - 90px);
+  flex:1;
+  overflow: visible;
+}
+
+.sub-right-panel {
+  width: 260px;
+  background-color:  white; 
+  flex-shrink: 0;
+
+  display: flex; 
+  justify-content: center;
+}
+
+.sub-left-panel {
+  position: relative;
+  top: 60px;
+  width: 260px;
+  height: 100%;
+  background-color: #f7f7f7; 
+  flex-shrink: 0;
+  display: flex; 
+  justify-content:flex-start;
+  flex-direction: column;
+}
+
+.sub-center-panel {
+  width: calc(100vw - 520px);
+  height: 100%;
+  flex: 1;
+  overflow: visible;
+}
+
+.button-bar {
+  background: #FFFFFF;
+  display: flex;
+  height: 64px;
+  align-items: center;
+  justify-content:center;
+  flex-shrink: 0;
+  gap:32px;
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+}
+.icon-change-page{
+  color: #3D3D3D;
+  width: 30px;
+  height: 30px;
+}
+
+.icon-change-page:hover {
+  cursor: pointer;
+  border-radius: 6px;
+}
+.btn-gray {
+  width: 36px;
+  height: 36px;
+  background-color: #cacaca20;
+  box-shadow: 0px 2px 4px 0px rgba(159, 159, 159, 0.558);
+  border-radius: 6px;
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center;
+  justify-content: center;
+  transition: 0.1s;
+}
+
+.btn-gray:hover {
+  cursor: pointer;
+  border-radius: 6px;
+  background: #d9d7d7;
+  box-shadow: 0px 2px 2px 0px rgba(144, 139, 139, 0.558);
+  transform: translateY(2px);
+  transition: 0.2s;
+}
+.btn-gray:active { 
+    transform: translateY(4px);
+    box-shadow: 0px 1px 2px 0px rgba(110, 107, 107, 0.558);
+  }
+
+/* 全局样式文件（如 src/assets/css/scrollbar.css） */
+
+/* 整个滚动条轨道 */
+::-webkit-scrollbar {
+  width: 0px;  /* 垂直滚动条宽度 */
+  height: 0px; /* 水平滚动条高度 */
+  background: transparent;
+}
+.divideline_left {
+  position: fixed;  /* 改为固定定位 */
+  top: 0;
+  left: 260px;
+  height: 100vh;    /* 使用视窗高度 */
+  width: 0.5px;
+  background-color: #F0F0F0;
+  z-index: 9999;     /* 确保在最顶层 */
+}
+.divideline_right {
+  position: fixed;  /* 改为固定定位 */
+  top: 0;
+  right: 260px;
+  height: 100vh;    /* 使用视窗高度 */
+  width: 1px;
+  background-color: #F0F0F0;
+  z-index: 100;     /* 确保在最顶层 */
+}
+
+
+
+/* 暗色主题 */
+[data-theme="dark"] .navbar {
+  background-color: #1e1e1e;
+}
+
+[data-theme="dark"] .right-bar {
+  background-color: #1e1e1e;
+}
+
+[data-theme="dark"] .left-bar {
+  background-color: #252526;
+}
+
+[data-theme="dark"] .center-bar {
+  background-color: #1e1e1e;
+}
+
+[data-theme="dark"] .right-panel {
+  background-color: #1e1e1e;
+}
+[data-theme="dark"] .button-bar {
+  background: #252526;
+}
+[data-theme="dark"] .left-panel {
+  background-color: #252526;
+}
+
+[data-theme="dark"] .center-panel {
+  background-color: #1e1e1e;
+}
+
+[data-theme="dark"] .sub-right-panel {
+  background-color: #1e1e1e;
+}
+
+[data-theme="dark"] .sub-left-panel {
+  background-color: #252526;
+}
+
+[data-theme="dark"] .sub-center-panel {
+  background-color: #1e1e1e;
+}
+
+[data-theme="dark"] .icon-change-page {
+  color: #e1e1e1;
+}
+
+[data-theme="dark"] .btn-gray {
+  background-color: #3d3d3d;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .btn-gray:hover {
+  background: #4d4d4d;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .divideline_left {
+  background-color: #444444;
+}
+
+[data-theme="dark"] .divideline_right {
+  background-color: #444444;
+}
+
+[data-theme="dark"] .divideline_horizontal {
+  background-color: #444444;
+}

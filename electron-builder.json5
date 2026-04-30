@@ -1,0 +1,40 @@
+{
+    "productName": "Flow Calendar",
+    "appId": "com.flowcalendar.www",
+    "mac": {
+        "icon": "./electron/resource/Calendar.ico",
+        "target": "dmg"
+    },
+    "win": {
+        "icon": "./electron/resource/Calendar.ico",
+        "target": [
+            {
+                "target": "nsis",
+                "arch": [
+                    "x64"
+                ]
+            }
+        ]
+    },
+    "nsis": {
+        "oneClick": false,
+        "perMachine": true,
+        "allowToChangeInstallationDirectory": true
+    },
+    "files": [
+        "dist",
+        "dist-electron"
+    ],
+    "extraResources": [
+        {
+            "from": "src/backend/app.exe",
+            "to": "../app.exe",
+            "filter": [
+                "**/*"
+            ]
+        }
+    ],
+    "directories": {
+        "output": "build"
+    }
+}
